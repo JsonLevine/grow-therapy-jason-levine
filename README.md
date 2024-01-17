@@ -1,4 +1,52 @@
-# Getting Started with Create React App
+# Project Details
+
+> This repo is strictly for the *Frontend Grow Therapy Assessment*, and was developed by *Jason Levine*
+
+# Components
+
+## SearchBar
+![Mock search bar image](/src/assets/SearchBarMock.png)
+This bar appears at the top of the page and is the entrypoint to displaying the results.  The Search Bar is made up of 3/4 smaller components:
+
+### DatePicker
+![Mock date picker](/src/assets/DatePickerMock.png)
+This widget allows the user to select a specific date to filter results by.
+
+### ResultCountPicker
+![Mock result counter picker](/src/assets/ResultCounterPickerMock.png)
+This widget allows the user to select the number of results they would like to see (25, 50, 75, 100, or 200). Defaults to 100.
+
+### (Optionally) CountryPicker
+![Mock country picker](/src/assets/CountryPickerMock.png)
+**This widget allows the user to select a country to filter results by.**
+
+### SearchButton
+![Mock search button](/src/assets/SearchButtonMock.png)
+This button commits the search given the parameters specified in the DatePicker, ResultCountPicker, and CountryPicker.
+
+## MainDisplay
+![Mock main display](/src/assets/MainDisplayMock.png)
+This is the main body of the page, where results are displayed.  This contains a list of ResultChip components, detailed below.
+
+
+### ResultChip
+![Mock result chip](/src/assets/ResultChipMock.png)
+This is a single result returned from the API.  It includes:
+1. The index of the result
+2. The name of the page
+3. The viewcount for the page
+4. **(Optional) Pin icon to pin the result**
+
+
+## Pagination
+![Mock pagination](/src/assets/PaginationMock.png)
+This allows the user to select which page of results they want to see.
+
+
+
+
+
+# Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -18,53 +66,3 @@ You may also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
