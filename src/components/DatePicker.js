@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export class DatePicker extends Component {
-  render() {
-    return (
-      <div>DatePicker</div>
-    )
-  }
+function datepicker() {
+  return (
+    <div>datepicker</div>
+  )
 }
 
-export default DatePicker
+export default datepicker
