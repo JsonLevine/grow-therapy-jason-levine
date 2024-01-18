@@ -24,8 +24,8 @@ This widget allows the user to select the number of results they would like to s
 ![Mock search button](/src/assets/SearchButtonMock.png)
 This button commits the search given the parameters specified in the DatePicker, ResultCountPicker, and CountryPicker.
 
-## MainDisplay
-![Mock main display](/src/assets/MainDisplayMock.png)
+## ResultList
+![Mock main display](/src/assets/ResultListMock.png)
 This is the main body of the page, where results are displayed.  This contains a list of ResultChip components, detailed below.
 
 

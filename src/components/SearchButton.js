@@ -1,11 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export class SearchButton extends Component {
-  render() {
-    return (
-      <div>SearchButton</div>
-    )
-  }
+export default function SearchButton() {
+  return (
+    <div>SearchButton</div>
+  )
 }
-
-export default SearchButton
