@@ -1,7 +1,11 @@
 import React from 'react'
 
 export default function SearchButton() {
+  const buttonStyle = {
+
+  }
+
   return (
-    <div>SearchButton</div>
+    <button id = 'searchButton' style={buttonStyle}>SearchButton</button>
   )
 }
