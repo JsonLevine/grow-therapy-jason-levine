@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState } from "react";
+import Picker from "react-datepicker";
+import dateIcon from "../assets/icons/dateIcon.png"
 
-function datepicker() {
+import "react-datepicker/dist/react-datepicker.css";
+
+export default function DatePicker() {
+  const [startDate, setStartDate] = useState(new Date());
+
   return (
-    <div>datepicker</div>
+    <>
+      <img src={dateIcon}/>
+      <Picker selected={startDate} onChange={(date) => setStartDate(date)} />
+    </>
   )
 }
-
-export default datepicker

@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export class SearchButton extends Component {
-  render() {
-    return (
-      <div>SearchButton</div>
-    )
+export default function SearchButton() {
+  const buttonStyle = {
+
   }
-}
 
-export default SearchButton
+  return (
+    <button id = 'searchButton' style={buttonStyle}>SearchButton</button>
+  )
+}

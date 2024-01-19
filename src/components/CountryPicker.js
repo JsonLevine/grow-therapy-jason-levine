@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-function CountryPicker() {
+export default function CountryPicker() {
+  const [selectedValue, setSelectedValue] = useState('United States');
+
+  const handleChange = (event) => {
+    setSelectedValue(event.target.value);
+  }
+
   return (
-    <div>CountryPicker</div>
+    <div>
+      <select value={selectedValue} onChange={handleChange}>
+        <option value="United States">United States</option>
+        <option value="Japan">Japan</option>
+      </select>
+    </div>
   )
 }
 
-export default CountryPicker
