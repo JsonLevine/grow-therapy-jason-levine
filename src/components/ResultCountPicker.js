@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import menuIcon from "../assets/icons/menuIcon.png"
 
-export default function ResultCountPicker() {
+export default function ResultCountPicker({setter}) {
   const [selectedValue, setSelectedValue] = useState('100');
 
   const handleChange = (event) => {
     setSelectedValue(event.target.value);
   }
-
+  setter(selectedValue)
+  
   return (
     <div>
       <img src={menuIcon} />
