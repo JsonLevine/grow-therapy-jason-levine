@@ -4,13 +4,17 @@ import dateIcon from "../assets/icons/dateIcon.png"
 
 import "react-datepicker/dist/react-datepicker.css";
 
-export default function DatePicker() {
-  const [startDate, setStartDate] = useState(new Date());
+export default function DatePicker({setter}) {
+  let yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+
+  const [date, setDate] = useState(yesterday);
+  setter(date)
 
   return (
     <>
       <img src={dateIcon}/>
-      <Picker selected={startDate} onChange={(date) => setStartDate(date)} />
+      <Picker selected={date} onChange={(date) => setDate(date)} />
     </>
   )
 }
