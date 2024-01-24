@@ -19,9 +19,9 @@ This widget allows the user to select a specific date to filter results by.
 
 This widget allows the user to select the number of results they would like to see (25, 50, 75, 100, or 200). Defaults to 100.
 
-### (Optionally) CountryPicker
+### CountryPicker
 ![Mock country picker](/src/assets/CountryPickerMock.png)
-**This widget allows the user to select a country to filter results by.**
+This widget allows the user to select a country to filter results by.
 
 ### SearchButton
 ![Mock search button](/src/assets/SearchButtonMock.png)
@@ -41,7 +41,7 @@ This is a single result returned from the API.  It includes:
 1. The index of the result
 2. The name of the page
 3. The viewcount for the page
-4. **(Optional) Pin icon to pin the result**
+
 
 
 ## Pagination
