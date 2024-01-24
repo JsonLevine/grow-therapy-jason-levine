@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ReactPaginate from 'react-paginate';
 
 export default function Pagination({articlesPerPage, totalPosts, pull_page}) {
@@ -8,7 +8,6 @@ export default function Pagination({articlesPerPage, totalPosts, pull_page}) {
     pull_page(selected + 1);
   };
 
-  console.log("Total posts " + Math.ceil(totalPosts / articlesPerPage))
   if (totalPosts) {
     return (
       <ReactPaginate

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import SearchBar from '../components/SearchBar';
 
@@ -7,8 +7,32 @@ jest.mock('../components/DatePicker', () => () => <div data-testid="mocked-date-
 jest.mock('../components/ResultCountPicker', () => () => <div data-testid="mocked-result-count-picker" />);
 jest.mock('../components/CountryPicker', () => () => <div data-testid="mocked-country-picker" />);
 
-global.fetch = jest.fn(() => Promise.resolve({
-  json: () => Promise.resolve({ items: [{ articles: [] }] })
+const mockResponse = {
+    "items": [
+        {
+        "project": "en.wikipedia",
+        "access": "all-access",
+        "year": "2015",
+        "month": "10",
+        "day": "10",
+            "articles": [
+                {
+                    "article": "Sample_Page_One",
+                    "views": 12345,
+                    "rank": 1
+                },
+                {
+                    "article": "Sample_Page_Two",
+                    "views": 23456,
+                    "rank": 2
+                }
+            ]
+        }
+    ]    
+}
+
+global.fetch =  jest.fn(() => Promise.resolve({
+  json: () => Promise.resolve(mockResponse)
 }));
 
 describe('SearchBar Component', () => {
@@ -25,10 +49,9 @@ describe('SearchBar Component', () => {
     expect(screen.getByTestId('mocked-country-picker')).toBeInTheDocument();
   });
 
-  test('calls fetchData on search button click', async () => {
+  test('calls fetchData on search button click', () => {
     render(<SearchBar setter={mockSetter} />);
-    await fireEvent.click(screen.getByText('Search'));
+    fireEvent.click(screen.getByText('Search'));
     expect(fetch).toHaveBeenCalled();
   });
-
 });

@@ -6,7 +6,7 @@ import CountryPicker from './CountryPicker'
 export default function SearchBar({setter}) {
   const [data, setData] = useState(null);
   const [date, setDate] = useState(null);
-  const [resultCount, setResultCount] = useState(null);
+  const [resultCount, setResultCount] = useState(100);
   setter(data)
 
   // Pull the desired date from the DatePicker component, and format it to match MM/DD/YYYY
@@ -20,7 +20,7 @@ export default function SearchBar({setter}) {
 
   // Pull the desired number of results from the ResultCountPicker component
   const pull_result_count = (resultCount) => {
-    setResultCount(resultCount)
+    setResultCount(resultCount.target.value)
   }
 
   // Fetch ranks from the given API
@@ -36,13 +36,13 @@ export default function SearchBar({setter}) {
   function formatData(data) {
     let newData = data.items[0].articles.slice(0,resultCount)
     newData.forEach((el) => el.rank-= 2);
-    setData(newData.filter((el) => el.article != "Main_Page" && el.article != "Special:Search"));
+    setData(newData.filter((el) => el.article !== "Main_Page" && el.article !== "Special:Search"));
   }
 
   return (
     <div className='centerItem searchBar'>
         <DatePicker setter={pull_date} />
-        <ResultCountPicker setter={pull_result_count}/>
+        <ResultCountPicker value={resultCount} setter={pull_result_count}/>
         <CountryPicker />
         <button id='searchButton' onClick={fetchData}>Search</button>
     </div>

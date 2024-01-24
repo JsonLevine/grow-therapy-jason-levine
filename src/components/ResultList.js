@@ -5,7 +5,7 @@ export default function ResultList({ results }) {
   if(results) {
     return (
       results.map(result => {
-        return <ResultChip page={result} />
+        return <ResultChip key={result.rank} page={result} />
       })
     )
   }

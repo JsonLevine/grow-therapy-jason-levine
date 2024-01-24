@@ -14,7 +14,7 @@ export default function DatePicker({setter}) {
 
   return (
     <div className="picker" data-testid="date-picker">
-      <img className="icon" src={dateIcon}/>
+      <img alt="Date icon" className="icon" src={dateIcon}/>
       <div className="innerPicker">
         <label htmlFor = "datePicker">Date</label>
         <Picker id ="datePicker" selected={date} onChange={(date) => setDate(date)} />

@@ -35,15 +35,14 @@ if (data) {
       />
     </div>
   )
-} else {
-  return (
-    <div id='body' className='centerItem'>
-      <h1 className = "mainFont header">Top Wikipedia Articles</h1>
-      <SearchBar setter={pull_data}/>
-    </div>
-  )
-}
-  
+  } else {
+    return (
+      <div id='body' className='centerItem'>
+        <h1 className = "mainFont header">Top Wikipedia Articles</h1>
+        <SearchBar setter={pull_data}/>
+      </div>
+    )
+  }
 }
 
 export default App;
