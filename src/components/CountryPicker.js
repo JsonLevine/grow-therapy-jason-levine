@@ -11,7 +11,7 @@ export default function CountryPicker() {
   return (
     <>
       <div className="leftBorder"></div>
-      <div className="picker">
+      <div className="picker" data-testid="country-picker">
         <img className="icon" src={countryIcon}/>
         <div className="innerPicker">
           <label htmlFor = "countryPicker">Country</label>
@@ -24,4 +24,3 @@ export default function CountryPicker() {
     </>
   )
 }
-

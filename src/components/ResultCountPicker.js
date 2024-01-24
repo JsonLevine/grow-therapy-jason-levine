@@ -13,7 +13,7 @@ export default function ResultCountPicker({setter}) {
   return (
     <>
       <div className="leftBorder"></div>
-      <div className="picker">
+      <div className="picker" data-testid="result-count-picker">
         <img className="icon" src={menuIcon} />
         <div className="innerPicker">
             <label htmlFor = "resultSelect">Num Results</label>

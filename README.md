@@ -21,6 +21,7 @@ This widget allows the user to select the number of results they would like to s
 
 ### CountryPicker
 ![Mock country picker](/src/assets/CountryPickerMock.png)
+
 This widget allows the user to select a country to filter results by.
 
 ### SearchButton

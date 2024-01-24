@@ -13,7 +13,7 @@ export default function DatePicker({setter}) {
   setter(date)
 
   return (
-    <div className="picker">
+    <div className="picker" data-testid="date-picker">
       <img className="icon" src={dateIcon}/>
       <div className="innerPicker">
         <label htmlFor = "datePicker">Date</label>
