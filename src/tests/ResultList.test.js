@@ -5,8 +5,8 @@ import ResultList from '../components/ResultList';
 
 describe('ResultList Component', () => {
   const mockResults = [
-    { rank: 1, article: 'Page_One', views: 1000 },
-    { rank: 2, article: 'Page_Two', views: 2000 }
+    { rank: 1, article: 'Page_One', views_ceil: 1000 },
+    { rank: 2, article: 'Page_Two', views_ceil: 2000 }
   ];
 
   test('renders a list of ResultChip components for given results', () => {

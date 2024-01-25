@@ -16,25 +16,25 @@ export default function SearchBar({props}) {
 
   // Fetch ranks from the given API
   function fetchData() {
-    fetch('https://wikimedia.org/api/rest_v1/metrics/pageviews/top/en.wikipedia/all-access/'+convertDate(props.date))
+    fetch('https://wikimedia.org/api/rest_v1/metrics/pageviews/top-per-country/'+props.country+'/all-access/'+convertDate(props.date))
       .then(response => response.json())
       .then(json => formatData(json))
       .catch(error => console.error(error));
+
+    props.pageSetter(1)
   }
 
-  // Filter out the "Main Page" and "Special:Search" pages that are almost always rank 1 & 2,
-  // and adjust the ranks of all other pages accordingly (subtracting 2)
+  // Filters out the correct number of articles to show
   function formatData(data) {
     let newData = data.items[0].articles.slice(0,props.resultCount)
-    newData.forEach((el) => el.rank-= 2);
-    props.dataSetter(newData.filter((el) => el.article !== "Main_Page" && el.article !== "Special:Search"));
+    props.dataSetter(newData);
   }
 
   return (
     <div className='centerItem searchBar'>
         <DatePicker value={props.date} setter={props.dateSetter} />
         <ResultCountPicker count={props.resultCount} setter={props.resultCountSetter}/>
-        <CountryPicker />
+        <CountryPicker country={props.country} setter={props.countrySetter} />
         <button id='searchButton' onClick={fetchData}>Search</button>
     </div>
   )

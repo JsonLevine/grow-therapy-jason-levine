@@ -10,7 +10,7 @@ jest.mock('../components/CountryPicker', () => () => <div data-testid="mocked-co
 const mockResponse = {
   "items": [
       {
-      "project": "en.wikipedia",
+      "country": "US",
       "access": "all-access",
       "year": "2015",
       "month": "10",
@@ -18,12 +18,14 @@ const mockResponse = {
           "articles": [
               {
                   "article": "Sample_Page_One",
-                  "views": 12345,
+                  "project":	"en.wikipedia",
+                  "views_ceil": 12345,
                   "rank": 1
               },
               {
                   "article": "Sample_Page_Two",
-                  "views": 23456,
+                  "project":	"en.wikipedia",
+                  "views_ceil": 23456,
                   "rank": 2
               }
           ]
@@ -43,9 +45,12 @@ describe('SearchBar Component', () => {
   const mockProps = {
     date: new Date(2021, 10, 10),
     resultCount: 50,
+    country: "US",
     dataSetter: jest.fn(),
     dateSetter: jest.fn(),
-    resultCountSetter: jest.fn()
+    resultCountSetter: jest.fn(),
+    countrySetter: jest.fn(),
+    pageSetter: jest.fn()
   };
 
   test('renders mocked child components', () => {

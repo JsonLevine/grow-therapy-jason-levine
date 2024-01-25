@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import countryIcon from "../assets/icons/countryIcon.png"
 
-export default function CountryPicker() {
-  const [selectedValue, setSelectedValue] = useState('United States');
+export default function CountryPicker({country, setter}) {
 
   const handleChange = (event) => {
-    setSelectedValue(event.target.value);
+    setter(event.target.value);
   }
 
   return (
@@ -15,9 +14,16 @@ export default function CountryPicker() {
         <img alt="Calenar icon" className="icon" src={countryIcon}/>
         <div className="innerPicker">
           <label htmlFor = "countryPicker">Country</label>
-          <select id ="countryPicker" value={selectedValue} onChange={handleChange}>
-            <option value="United States">United States</option>
-            <option value="Japan">Japan</option>
+          <select id ="countryPicker" value={country} onChange={handleChange}>
+            <option value="US">United States</option>
+            <option value="MX">Mexico</option>
+            <option value="ES">Spain</option>
+            <option value="FR">France</option>
+            <option value="IN">India</option>
+            <option value="NO">Norway</option>
+            <option value="SE">Sweden</option>
+            <option value="CH">Switzerland</option>
+            <option value="JP">Japan</option>
           </select>
         </div>
       </div>

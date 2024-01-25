@@ -10,11 +10,11 @@ export default function ResultCountPicker({count, setter}) {
         <div className="innerPicker">
             <label htmlFor = "resultSelect">Num Results</label>
           <select data-testid="result-select" id="resultSelect" value={count} onChange={setter}>
-            <option value="27">25</option>
-            <option value="52">50</option>
-            <option value="77">75</option>
-            <option value="102">100</option>
-            <option value="202">200</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="75">75</option>
+            <option value="100">100</option>
+            <option value="200">200</option>
           </select>
         </div>
       </div>

@@ -12,9 +12,9 @@ describe('ResultCountPicker Component', () => {
   });
 
   test('initializes with 100 as the default value', () => {
-    render(<ResultCountPicker count="102" setter={mockSetter} />);
+    render(<ResultCountPicker count="100" setter={mockSetter} />);
     const selectElement = screen.getByTestId('result-select');
     expect(selectElement).toBeInTheDocument();
-    expect(selectElement).toHaveValue('102');
+    expect(selectElement).toHaveValue('100');
   });
 });
