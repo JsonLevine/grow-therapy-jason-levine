@@ -47,7 +47,7 @@ if (data) {
     <div id='body' className='centerItem'>
       <h1 className = "mainFont header">Top Wikipedia Articles</h1>
       <SearchBar props={props}/>
-      <div className="resultList">
+      <div className="resultList desktop-8 tablet-12 tablet-ex mobile-12">
         <ResultList results={currentArticles}/>
       </div>
       <Pagination 

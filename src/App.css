@@ -1,3 +1,63 @@
+@media only screen and (max-width: 600px) {
+  /* For mobile: */
+  .mobile-1 {width: 8.33%;}
+  .mobile-2 {width: 16.66%;}
+  .mobile-3 {width: 25%;}
+  .mobile-4 {width: 33.33%;}
+  .mobile-5 {width: 41.66%;}
+  .mobile-6 {width: 50%;}
+  .mobile-7 {width: 58.33%;}
+  .mobile-8 {width: 66.66%;}
+  .mobile-9 {width: 75%;}
+  .mobile-10 {width: 83.33%;}
+  .mobile-11 {width: 91.66%;}
+  .mobile-12 {width: 100%}
+  .searchBar {
+    display: flex;
+    flex-direction: column;
+  }
+  #searchButton{
+    margin: 6% !important;
+  }
+  .hide-radius{border-radius: 0 !important}
+  .leftBorder{display: none !important}
+}
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  /* For tablet: */
+  .tablet-1 {width: 8.33%;}
+  .tablet-2 {width: 16.66%;}
+  .tablet-3 {width: 25%;}
+  .tablet-4 {width: 33.33%;}
+  .tablet-5 {width: 41.66%;}
+  .tablet-6 {width: 50%;}
+  .tablet-7 {width: 58.33%;}
+  .tablet-8 {width: 66.66%;}
+  .tablet-9 {width: 75%;}
+  .tablet-10 {width: 83.33%;}
+  .tablet-11 {width: 91.66%;}
+  .tablet-12 {width: 100%;}
+  .hide-radius{border-radius: 0 !important}
+}
+@media only screen and (min-width: 769px) and (max-width: 1060px) {
+  /* For large tablet: */
+  .tablet-ex {width: 83.33%;}
+}
+@media only screen and (min-width: 1061px) {
+  /* For desktop: */
+  .desktop-1 {width: 8.33%;}
+  .desktop-2 {width: 16.66%;}
+  .desktop-3 {width: 25%;}
+  .desktop-4 {width: 33.33%;}
+  .desktop-5 {width: 41.66%;}
+  .desktop-6 {width: 50%;}
+  .desktop-7 {width: 58.33%;}
+  .desktop-8 {width: 66.66%;}
+  .desktop-9 {width: 75%;}
+  .desktop-10 {width: 83.33%;}
+  .desktop-11 {width: 91.66%;}
+  .desktop-12 {width: 100%;}
+}
+
 .App {
   text-align: center;
 }
@@ -25,15 +85,12 @@ html {
   background: #ffffff;
   margin-top: 2em;
   margin-bottom: 1em;
-  width: 65%;
-  padding: 0 20px;
   border-radius: 100px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
 .resultList {
   background: #ffffff;
-  width: 68%;
   border-radius: 16px;
   padding: 10px 0;
   margin: 15px;
@@ -48,10 +105,6 @@ html {
   padding: 24px;
   border-radius: 12px;
   margin: 20px 30px;
-}
-
-#page {
-
 }
 
 #article {
@@ -72,7 +125,7 @@ html {
 
 .mainFont {
   font-family: 'Lora', serif;
-  font-size: 40px;
+  font-size: 402empx;
   font-weight: 500;
   line-height: 24px;
   letter-spacing: 0em;
@@ -82,9 +135,9 @@ html {
 #searchButton {
   color: #FFFFFF;
   background-color: #025B4B;
-  width: 160px;
   height: 64px;
   padding: 12px 24px 12px 24px;
+  margin-right: 2%;
   border-radius: 100px;
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
@@ -112,12 +165,12 @@ html {
   display: flex;
   align-items: center;
   cursor: pointer;
-  width: 30%;
   border-radius:100px;
 }
 
 .picker:hover {
 background-color: #F5F7F780;
+cursor: pointer;
 }
 
 .icon {
@@ -153,6 +206,7 @@ background-color: #F5F7F780;
   background: #FFF;
   border: none;
   padding: 0;
+
 }
 
 .pagination {

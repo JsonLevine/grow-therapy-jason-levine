@@ -6,7 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export default function DatePicker({value, setter}) {
   return (
-    <div className="picker" data-testid="date-picker">
+    <div className="picker desktop-3 tablet-3 mobile-12" data-testid="date-picker">
       <img alt="Date icon" className="icon" src={dateIcon}/>
       <div className="innerPicker">
         <label htmlFor = "datePicker">Date</label>

@@ -31,11 +31,11 @@ export default function SearchBar({props}) {
   }
 
   return (
-    <div className='centerItem searchBar'>
+    <div className='centerItem searchBar desktop-8 tablet-12 tablet-ex mobile-12 hide-radius'>
         <DatePicker value={props.date} setter={props.dateSetter} />
         <ResultCountPicker count={props.resultCount} setter={props.resultCountSetter}/>
         <CountryPicker country={props.country} setter={props.countrySetter} />
-        <button id='searchButton' onClick={fetchData}>Search</button>
+        <button id='searchButton' className="desktop-3 tablet-3 mobile-10" onClick={fetchData}>Search</button>
     </div>
   )
 }

@@ -10,7 +10,7 @@ export default function CountryPicker({country, setter}) {
   return (
     <>
       <div className="leftBorder"></div>
-      <div className="picker" data-testid="country-picker">
+      <div className="picker desktop-3 tablet-3 mobile-12" data-testid="country-picker">
         <img alt="Calenar icon" className="icon" src={countryIcon}/>
         <div className="innerPicker">
           <label htmlFor = "countryPicker">Country</label>
