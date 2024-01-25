@@ -11,8 +11,8 @@ export default function CountryPicker() {
   return (
     <>
       <div className="leftBorder"></div>
-      <div className="picker">
-        <img className="icon" src={countryIcon}/>
+      <div className="picker" data-testid="country-picker">
+        <img alt="Calenar icon" className="icon" src={countryIcon}/>
         <div className="innerPicker">
           <label htmlFor = "countryPicker">Country</label>
           <select id ="countryPicker" value={selectedValue} onChange={handleChange}>
@@ -24,4 +24,3 @@ export default function CountryPicker() {
     </>
   )
 }
-

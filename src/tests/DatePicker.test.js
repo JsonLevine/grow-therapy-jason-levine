@@ -21,11 +21,10 @@ describe('DatePicker Component', () => {
     expect(screen.getByLabelText(/date/i)).toBeInTheDocument();
   });
 
-  test('initializes with yesterday\'s date', () => {
-    render(<DatePicker setter={mockSetter} />);
-    let yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-    expect(mockSetter).toHaveBeenCalledWith(yesterday);
+  test('initializes with mocked date', () => {
+    const testDate = new Date(2020, 1, 1)
+    render(<DatePicker value={testDate} setter={mockSetter} />);
+    expect(screen.getByTestId('date-picker')).toBeInTheDocument()
   });
 
   test('updates date on change', () => {

@@ -7,7 +7,7 @@
 ## SearchBar
 ![Mock search bar image](/src/assets/SearchBarMock.png)
 
-This bar appears at the top of the page and is the entrypoint to displaying the results.  The Search Bar is made up of 3/4 smaller components:
+This bar appears at the top of the page and is the entrypoint to displaying the results.  The Search Bar is made up of 3 smaller components, as wel as a Search button. This button commits the search given the parameters specified in the DatePicker, ResultCountPicker, and CountryPicker:
 
 ### DatePicker
 ![Mock date picker](/src/assets/DatePickerMock.png)
@@ -21,12 +21,8 @@ This widget allows the user to select the number of results they would like to s
 
 ### CountryPicker
 ![Mock country picker](/src/assets/CountryPickerMock.png)
+
 This widget allows the user to select a country to filter results by.
-
-### SearchButton
-![Mock search button](/src/assets/SearchButtonMock.png)
-
-This button commits the search given the parameters specified in the DatePicker, ResultCountPicker, and CountryPicker.
 
 ## ResultList
 ![Mock main display](/src/assets/ResultListMock.png)
