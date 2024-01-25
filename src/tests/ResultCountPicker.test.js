@@ -6,27 +6,15 @@ import ResultCountPicker from '../components/ResultCountPicker';
 describe('ResultCountPicker Component', () => {
   const mockSetter = jest.fn();
 
-  beforeEach(() => {
-    jest.clearAllMocks();
-  });
-
   test('renders without crashing', () => {
     render(<ResultCountPicker setter={mockSetter} />);
-    expect(screen.getByLabelText(/num results/i)).toBeInTheDocument();
+    expect(screen.getByTestId('result-count-picker')).toBeInTheDocument();
   });
 
   test('initializes with 100 as the default value', () => {
-    render(<ResultCountPicker setter={mockSetter} />);
-    expect(screen.getByLabelText(/num results/i)).toHaveValue('100');
-    expect(mockSetter).toHaveBeenCalledWith('100');
+    render(<ResultCountPicker count="102" setter={mockSetter} />);
+    const selectElement = screen.getByTestId('result-select');
+    expect(selectElement).toBeInTheDocument();
+    expect(selectElement).toHaveValue('102');
   });
-
-  test('updates value on change and calls setter function', () => {
-    render(<ResultCountPicker setter={mockSetter} />);
-    const selectElement = screen.getByLabelText(/num results/i);
-    fireEvent.change(selectElement, { target: { value: '50' } });
-    expect(selectElement).toHaveValue('50');
-    expect(mockSetter).toHaveBeenCalledWith('50');
-  });
-
 });

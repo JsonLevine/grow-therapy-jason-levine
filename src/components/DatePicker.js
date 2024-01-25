@@ -1,23 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import Picker from "react-datepicker";
 import dateIcon from "../assets/icons/dateIcon.png"
 
 import "react-datepicker/dist/react-datepicker.css";
 
-export default function DatePicker({setter}) {
-
-  // Calculate Yesterday's date to default the datepicker to Yesterday
-  let yesterday = new Date();
-  yesterday.setDate(yesterday.getDate() - 1);
-  const [date, setDate] = useState(yesterday);
-  setter(date)
-
+export default function DatePicker({value, setter}) {
   return (
     <div className="picker" data-testid="date-picker">
       <img alt="Date icon" className="icon" src={dateIcon}/>
       <div className="innerPicker">
         <label htmlFor = "datePicker">Date</label>
-        <Picker id ="datePicker" selected={date} onChange={(date) => setDate(date)} />
+        <Picker id ="datePicker" selected={value} onChange={(date) => setter(date)} />
       </div>
     </div>
   )
