@@ -7,7 +7,7 @@
 ## SearchBar
 ![Mock search bar image](/src/assets/SearchBarMock.png)
 
-This bar appears at the top of the page and is the entrypoint to displaying the results.  The Search Bar is made up of 3 smaller components, as wel as a Search button. This button commits the search given the parameters specified in the DatePicker, ResultCountPicker, and CountryPicker:
+This bar appears at the top of the page and is the entrypoint to displaying the results.  The Search Bar is made up of 3 smaller components, as well as a Search button. This button commits the search given the parameters specified in the DatePicker, ResultCountPicker, and CountryPicker:
 
 ### DatePicker
 ![Mock date picker](/src/assets/DatePickerMock.png)
