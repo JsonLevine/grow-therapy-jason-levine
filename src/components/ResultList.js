@@ -13,7 +13,7 @@ export default function ResultList({ results }) {
   else if (results) {
     return (
       results.map(result => {
-        return <ResultChip key={result.rank} page={result} />
+        return <ResultChip key={result.rank+result.article} page={result} />
       })
     )
   } else {
