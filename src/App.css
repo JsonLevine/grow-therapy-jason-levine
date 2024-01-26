@@ -212,7 +212,9 @@ cursor: pointer;
 }
 
 .pagination :disabled {
-
+  background: #D4D8D9;
+  color: #737680;
+  cursor: not-allowed;
 }
 
 .pagination .active {

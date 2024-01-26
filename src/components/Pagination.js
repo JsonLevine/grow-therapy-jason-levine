@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactPaginate from 'react-paginate';
 
 export default function Pagination({page, articlesPerPage, totalArticles, pull_page}) {
 
@@ -39,18 +38,3 @@ function Button({ children, ...props }) {
     <button className={props.active ? 'active page-number' : 'page-number' } {...props}>{children}</button>
   );
 };
-
-{/* <ReactPaginate
-onPageChange={paginate}
-pageCount={Math.ceil(totalArticles / articlesPerPage)}
-previousLabel={'<'}
-nextLabel={'>'}
-pageRangeDisplayed={2}
-containerClassName={'pagination desktop-8'}
-pageLinkClassName={'page-number'}
-previousLinkClassName={'page-number'}
-nextLinkClassName={'page-number'}
-activeLinkClassName={'active'}
-forcePage={page-1}
-siblingCount='1'
-/> */}
