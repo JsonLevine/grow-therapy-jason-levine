@@ -5,30 +5,41 @@ import ResultList from './components/ResultList';
 import Pagination from './components/Pagination';
 
 function App() {
+  let defaultPage = 0
+  let defaultArticlesPerPage = 10
+  let defaultResultCount = 100
+  let defaultCountry = "US"
+  
   const [data, setData] = useState(null);
-  const [page, setPage] = useState(1);
-  const [articlesPerPage] = useState(10);
+  const [page, setPage] = useState(defaultPage);
+  const [articlesPerPage] = useState(defaultArticlesPerPage);
   // Calculate Yesterday's date to default the datepicker to Yesterday
   let yesterday = new Date();
   yesterday.setDate(yesterday.getDate() - 1);
   const [date, setDate] = useState(yesterday);
-  // 102 instead of 100 because we later filter out 2 specific pages
-  const [resultCount, setResultCount] = useState(102);
+  const [resultCount, setResultCount] = useState(defaultResultCount);
+  const [country, setCountry] = useState(defaultCountry);
 
   const indexOfLastPost = page * articlesPerPage;
   const indexOfFirstPost = indexOfLastPost - articlesPerPage;
   const currentArticles = data?.slice(indexOfFirstPost, indexOfLastPost);
   
+  // This is needed just for the specific logic of targeting the event.target.value
   function pull_result_count(event) {
     setResultCount(event.target.value)
   }
+
+  // Props to pass to the SearchBar component to execute the search
   const props = {
     data: data,
     dataSetter: setData,
     date: date,
     dateSetter: setDate,
+    pageSetter: setPage,
     resultCount: resultCount,
-    resultCountSetter: pull_result_count
+    resultCountSetter: pull_result_count,
+    country: country,
+    countrySetter: setCountry
   }
 
 if (data) {
@@ -36,12 +47,13 @@ if (data) {
     <div id='body' className='centerItem'>
       <h1 className = "mainFont header">Top Wikipedia Articles</h1>
       <SearchBar props={props}/>
-      <div className="resultList">
+      <div className="resultList desktop-8 tablet-12 tablet-ex mobile-12">
         <ResultList results={currentArticles}/>
       </div>
       <Pagination 
+        page={page}
         articlesPerPage={articlesPerPage}
-        totalPosts={data?.length}
+        totalArticles={data?.length}
         pull_page={setPage}
       />
     </div>

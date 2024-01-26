@@ -7,7 +7,7 @@ describe('ResultChip Component', () => {
   const mockPage = {
     rank: 1,
     article: 'Example_Page',
-    views: 123456
+    views_ceil: 123456
   };
 
   test('renders page information correctly', () => {
