@@ -2,7 +2,6 @@ import React from 'react'
 import ResultChip from './ResultChip'
 
 export default function ResultList({ results }) {
-  console.log(results)
   if(results === "Invalid Data") {
     return (
       <div className = 'failedSearch'>
