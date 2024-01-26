@@ -12,7 +12,7 @@ This bar appears at the top of the page and is the entrypoint to displaying the 
 ### DatePicker
 ![Mock date picker](/src/assets/DatePickerMock.png)
 
-This widget allows the user to select a specific date to filter results by.
+This widget allows the user to select a specific date to filter results by. Defaults to yesterday's date.
 
 ### ResultCountPicker
 ![Mock result counter picker](/src/assets/ResultCounterPickerMock.png)
@@ -22,7 +22,7 @@ This widget allows the user to select the number of results they would like to s
 ### CountryPicker
 ![Mock country picker](/src/assets/CountryPickerMock.png)
 
-This widget allows the user to select a country to filter results by.
+This widget allows the user to select a country to filter results by. Defaults to United States.
 
 ## ResultList
 ![Mock main display](/src/assets/ResultListMock.png)

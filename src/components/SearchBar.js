@@ -26,8 +26,12 @@ export default function SearchBar({props}) {
 
   // Filters out the correct number of articles to show
   function formatData(data) {
-    let newData = data.items[0].articles.slice(0,props.resultCount)
-    props.dataSetter(newData);
+    if (!data.detail) {
+      let newData = data.items[0].articles.slice(0,props.resultCount)
+      props.dataSetter(newData);
+    } else {
+      props.dataSetter("Invalid Data")
+    }
   }
 
   return (

@@ -1,29 +1,41 @@
 import React from 'react'
-import ReactPaginate from 'react-paginate';
 
-export default function Pagination({page, articlesPerPage, totalArticles, pull_page}) {
+export default function Pagination({page, articlesPerPage, totalArticles, updatePage}) {
 
-  // Find the new page number after pagination to propegate upwards (add 1 to account for page 0)
-  const paginate = ({ selected }) => {
-    pull_page(selected + 1);
+  const numPages = Math.ceil(totalArticles / articlesPerPage);
+
+  // Handle incrementing the page
+  function handleNext() {
+    updatePage(page+1);
+  };
+
+  // Handle decrementing the page
+  function handlePrevious() {
+    updatePage(page-1);
+  };
+
+  // Custom button component for pagination
+  function Button({ children, ...props }) {
+    return (
+      <button className={props.active ? 'active page-number' : 'page-number' } {...props}>{children}</button>
+    );
   };
 
   if (totalArticles) {
     return (
-      <ReactPaginate
-        onPageChange={paginate}
-        pageCount={Math.ceil(totalArticles / articlesPerPage)}
-        previousLabel={'<'}
-        nextLabel={'>'}
-        pageRangeDisplayed={2}
-        containerClassName={'pagination desktop-8'}
-        pageLinkClassName={'page-number'}
-        previousLinkClassName={'page-number'}
-        nextLinkClassName={'page-number'}
-        activeLinkClassName={'active'}
-        forcePage={page-1}
-        siblingCount='1'
-      />
+      <div className="pagination">
+        <Button onClick={handlePrevious} disabled={page <= 1}>{'<'}</Button>
+        { numPages - page < 1 && page - 4 > 0 && <Button onClick={() => updatePage(page - 4)}>{page - 4}</Button> }
+        { numPages - page < 2 && page - 3 > 0 && <Button onClick={() => updatePage(page - 3)}>{page - 3}</Button> }
+        { numPages && page - 2 > 0 && <Button onClick={() => updatePage(page - 2)}>{page - 2}</Button> }
+        { numPages && page - 1 > 0 && <Button onClick={() => updatePage(page - 1)}>{page - 1}</Button> }
+        <Button active="true">{page}</Button>
+        { page + 1 <= numPages && <Button onClick={() => updatePage(page + 1)}>{page + 1}</Button> }
+        { page + 2 <= numPages && <Button onClick={() => updatePage(page + 2)}>{page + 2}</Button> }
+        { page + 3 <= numPages && page < 3 && <Button onClick={() => updatePage(page + 3)}>{page + 3}</Button> }
+        { page + 4 <= numPages && page < 2 && <Button onClick={() => updatePage(page + 4)}>{page + 4}</Button> }
+        <Button onClick={handleNext} disabled={page === numPages}>{'>'}</Button>
+      </div>
     )
   } else {
     return null

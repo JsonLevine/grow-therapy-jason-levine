@@ -32,6 +32,13 @@
   text-align: center;
 }
 
+#navbar {
+  height: 4em;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  background-color: white;
+  width: 100%;
+}
+
 html {
   background: #f5f7f7;
 }
@@ -65,6 +72,13 @@ html {
   padding: 10px 0;
   margin: 15px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.failedSearch {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  color:rgb(199, 1, 1)
 }
 
 .pageResult {
@@ -199,8 +213,8 @@ cursor: pointer;
   border: 1px solid #D4D8D9;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   align-items: center;
   display: flex;
   justify-content: space-around;
@@ -211,6 +225,12 @@ cursor: pointer;
 	background: #E0E9CB;
 }
 
+.pagination :disabled {
+  background: #D4D8D9;
+  color: #737680;
+  cursor: not-allowed;
+}
+
 .pagination .active {
 	color: #025B4B;
 	background: #E0E9CB;
@@ -218,10 +238,6 @@ cursor: pointer;
 
 .pagination .active:hover {
 	cursor: not-allowed;
-}
-
-ul {
-	list-style: none;
 }
 
 .react-datepicker {
@@ -239,7 +255,13 @@ ul {
   margin: 0.366rem !important
 }
 
-.react-datepicker__day--selected{
+.react-datepicker__day--selected {
+  background-color: #B3CEC9 !important;
+  color: #025B4B !important;
+  border-radius: 100% !important;
+}
+
+.react-datepicker__day--keyboard-selected{
   background-color: #B3CEC9 !important;
   color: #025B4B !important;
   border-radius: 100% !important;
