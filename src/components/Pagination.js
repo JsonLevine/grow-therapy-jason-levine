@@ -3,11 +3,6 @@ import ReactPaginate from 'react-paginate';
 
 export default function Pagination({page, articlesPerPage, totalArticles, pull_page}) {
 
-  // Find the new page number after pagination to propegate upwards (add 1 to account for page 0)
-  const paginate = ({ selected }) => {
-    pull_page(selected);
-  };
-
   const pages = Math.ceil(totalArticles / articlesPerPage);
   function handleNext() {
     pull_page(page+1);
@@ -26,7 +21,7 @@ export default function Pagination({page, articlesPerPage, totalArticles, pull_p
       { pages - page < 2 && page - 3 > 0 && <Button onClick={() => pull_page(page - 3)}>{page - 3}</Button> }
       { pages && page - 2 > 0 && <Button onClick={() => pull_page(page - 2)}>{page - 2}</Button> }
       { pages && page - 1 > 0 && <Button onClick={() => pull_page(page - 1)}>{page - 1}</Button> }
-      <Button active={true}>{page}</Button>
+      <Button active="true">{page}</Button>
       { page + 1 <= pages && <Button onClick={() => pull_page(page + 1)}>{page + 1}</Button> }
       { page + 2 <= pages && <Button onClick={() => pull_page(page + 2)}>{page + 2}</Button> }
       { page + 3 <= pages && page < 3 && <Button onClick={() => pull_page(page + 3)}>{page + 3}</Button> }
