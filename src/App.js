@@ -13,6 +13,7 @@ function App() {
   const [data, setData] = useState(null);
   const [page, setPage] = useState(defaultPage);
   const [articlesPerPage] = useState(defaultArticlesPerPage);
+
   // Calculate Yesterday's date to default the datepicker to Yesterday
   let yesterday = new Date();
   yesterday.setDate(yesterday.getDate() - 1);
@@ -22,10 +23,11 @@ function App() {
 
   const indexOfLastPost = page * articlesPerPage;
   const indexOfFirstPost = indexOfLastPost - articlesPerPage;
-  const currentArticles = data?.slice(indexOfFirstPost, indexOfLastPost);
+  const currentArticles = data ? data.slice(indexOfFirstPost, indexOfLastPost) : null;
+  console.log("Articles "+currentArticles)
   
   // This is needed just for the specific logic of targeting the event.target.value
-  function pull_result_count(event) {
+  function uptateResultCount(event) {
     setResultCount(event.target.value)
   }
 
@@ -37,7 +39,7 @@ function App() {
     dateSetter: setDate,
     pageSetter: setPage,
     resultCount: resultCount,
-    resultCountSetter: pull_result_count,
+    resultCountSetter: uptateResultCount,
     country: country,
     countrySetter: setCountry
   }
@@ -54,7 +56,7 @@ if (data) {
         page={page}
         articlesPerPage={articlesPerPage}
         totalArticles={data?.length}
-        pull_page={setPage}
+        updatePage={setPage}
       />
     </div>
   )

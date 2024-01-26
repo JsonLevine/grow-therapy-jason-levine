@@ -226,10 +226,6 @@ cursor: pointer;
 	cursor: not-allowed;
 }
 
-ul {
-	list-style: none;
-}
-
 .react-datepicker {
   border-radius: 24px !important;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;  border: none !important;
@@ -245,7 +241,13 @@ ul {
   margin: 0.366rem !important
 }
 
-.react-datepicker__day--selected{
+.react-datepicker__day--selected {
+  background-color: #B3CEC9 !important;
+  color: #025B4B !important;
+  border-radius: 100% !important;
+}
+
+.react-datepicker__day--keyboard-selected{
   background-color: #B3CEC9 !important;
   color: #025B4B !important;
   border-radius: 100% !important;

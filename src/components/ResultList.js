@@ -2,6 +2,7 @@ import React from 'react'
 import ResultChip from './ResultChip'
 
 export default function ResultList({ results }) {
+  console.log("Results "+results)
   if(results) {
     return (
       results.map(result => {
@@ -10,6 +11,8 @@ export default function ResultList({ results }) {
     )
   }
   else return (
-    null
+    <div>
+      No results
+    </div>
   )
 }
