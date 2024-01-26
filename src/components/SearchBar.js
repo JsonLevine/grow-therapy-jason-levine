@@ -30,7 +30,7 @@ export default function SearchBar({props}) {
       let newData = data.items[0].articles.slice(0,props.resultCount)
       props.dataSetter(newData);
     } else {
-      props.dataSetter(null)
+      props.dataSetter("Invalid Data")
     }
   }
 

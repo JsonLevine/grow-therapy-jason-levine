@@ -32,6 +32,13 @@
   text-align: center;
 }
 
+#navbar {
+  height: 4em;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  background-color: white;
+  width: 100%;
+}
+
 html {
   background: #f5f7f7;
 }
@@ -65,6 +72,13 @@ html {
   padding: 10px 0;
   margin: 15px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.failedSearch {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  color:rgb(199, 1, 1)
 }
 
 .pageResult {

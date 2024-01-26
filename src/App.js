@@ -23,8 +23,8 @@ function App() {
 
   const indexOfLastPost = page * articlesPerPage;
   const indexOfFirstPost = indexOfLastPost - articlesPerPage;
-  const currentArticles = data ? data.slice(indexOfFirstPost, indexOfLastPost) : null;
-  console.log("Articles "+currentArticles)
+  const currentArticles = 
+    (data !== "Invalid Data" && data) ? data.slice(indexOfFirstPost, indexOfLastPost) : null;
   
   // This is needed just for the specific logic of targeting the event.target.value
   function uptateResultCount(event) {
@@ -44,9 +44,10 @@ function App() {
     countrySetter: setCountry
   }
 
-if (data) {
+if (data && data !== "Invalid Data") {
   return (
     <div id='body' className='centerItem'>
+      <div id="navbar"></div>
       <h1 className = "mainFont header">Top Wikipedia Articles</h1>
       <SearchBar props={props}/>
       <div className="resultList desktop-8 tablet-12 tablet-ex mobile-12">
@@ -60,9 +61,21 @@ if (data) {
       />
     </div>
   )
+  } else if(data === "Invalid Data") {
+    return (
+      <div id='body' className='centerItem'>
+        <div id="navbar"></div>
+        <h1 className = "mainFont header">Top Wikipedia Articles</h1>
+        <SearchBar props={props}/>
+        <div className="resultList desktop-8 tablet-12 tablet-ex mobile-12">
+          <ResultList results={data}/>
+        </div>
+      </div>
+    )
   } else {
     return (
       <div id='body' className='centerItem'>
+        <div id="navbar"></div>
         <h1 className = "mainFont header">Top Wikipedia Articles</h1>
         <SearchBar props={props}/>
       </div>
