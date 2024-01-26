@@ -47,17 +47,17 @@ This allows the user to select which page of results they want to see.
 
 ---
 
-## Available Scripts
+## Usage and Available Scripts
+To install dependencies initially, run:
 
-In the project directory, you can run:
+### `npm install`
+
+Then within the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
+Which runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
 ### `npm test`
 
