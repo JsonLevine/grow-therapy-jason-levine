@@ -15,13 +15,14 @@ export default function Pagination({page, articlesPerPage, totalArticles, pull_p
         pageCount={Math.ceil(totalArticles / articlesPerPage)}
         previousLabel={'<'}
         nextLabel={'>'}
-        pageRangeDisplayed={4}
-        containerClassName={'pagination'}
+        pageRangeDisplayed={2}
+        containerClassName={'pagination desktop-8'}
         pageLinkClassName={'page-number'}
         previousLinkClassName={'page-number'}
         nextLinkClassName={'page-number'}
         activeLinkClassName={'active'}
         forcePage={page-1}
+        siblingCount='1'
       />
     )
   } else {
